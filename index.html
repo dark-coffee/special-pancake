@@ -162,7 +162,7 @@
 
         .input-container{
             height: 700px;
-            width: 60%;
+            width:60%;
             position: absolute;
             top: 100px;
             right: 0px;
@@ -179,12 +179,6 @@
             position: relative;
         }
 
-        .input-text{
-            /*background-color: red;*/
-            height: 50px;
-            width: 250px;
-            padding-left: 20px;
-        }
 
         .input-button{
             /*background-color: red;*/
@@ -266,8 +260,51 @@
             padding-left: 20px;
         }
 
+        #update-sidepanel-bg {display: inline-block;}
+        #lbl-sidepanel-bg {display: inline-block;}
+        #update-sidepanel-img {display: none;}
+        #lbl-sidepanel-img {display: none;}
 
-        #update-sidepanel-img{display: none;}
+        label {
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            display: inline-block;
+            width: 150px;
+            margin-right: 0px;
+            text-align: center;
+        }
+        input {
+            display: inline-block;
+            outline:0; 
+            border: 0;
+            height: 31px;
+            width: 343.55px;
+            margin-left:0px;
+            font-size: 16px;
+            border-radius: 0px 4px 4px 0px;
+            padding-left: 8px;
+        }
+        .input-line{
+            width: 507px;
+            background-color: #cccccc;
+            border-radius: 5px;
+            border: 1px solid #eeeeee; 
+            color: #fff;
+            -webkit-transition: background-color 1s;
+            transition: background-color 1s;
+
+            -webkit-transition: border 1s;
+            transition: border 1s;
+        }
+        .input-line:focus-within{
+            -webkit-transition: background-color 1s;
+            transition: background-color 1s;
+            -webkit-transition: border 1s;
+            transition: border 1s;
+            background-color: rgb(64,176,236);
+            border: 1px solid rgb(64,176,236);
+        }
     </style>
 </head>
 <body>
@@ -326,41 +363,45 @@
             <div class="input-container">
                 <div class="input-inner">
                     <div class="card-title">Card Details</div>
-                    <div class="input-text">
-                        <input class="input-txt" id="update-title" type="text" placeholder="module title"/>
+                    <div class="input-line">
+                        <label for="update-title">Repo Title</label>
+                        <input id="update-title" type="text" placeholder="module title"/>
                     </div>
-                    <div class="input-text">
-                        <input class="input-txt" id="update-author" type="text" placeholder="module author"/>
+                    <div class="input-line">
+                        <label for="update-author">Repo Author</label>
+                        <input id="update-author" type="text" placeholder="module author"/>
                     </div>
-                    <div class="input-text">
-                        <input class="input-txt" id="update-description" type="text" placeholder="module description"/>
+                    <div class="input-line">
+                        <label for="update-description">Repo Description</label>
+                        <input id="update-description" type="text" placeholder="module description"/>
                     </div>
-                    <div class="input-text">
-                        <input class="input-txt" id="update-sidepanel-bg" type="text" placeholder="side panel color"/>
+                    <div class="input-line">
+                        <label for="update-sidepanel-bg" id="lbl-sidepanel-bg">Panel Color</label>
+                        <input id="update-sidepanel-bg" type="text" placeholder="side panel color"/>
                     </div>
-                    <div class="input-text">
-                        <label for="update-sidepanel-img">Image url</label>
-                        <input class="input-txt" id="update-sidepanel-img" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
+                    <div class="input-line">
+                        <label for="update-sidepanel-img" id="lbl-sidepanel-img">Image url</label>
+                        <input id="update-sidepanel-img" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
                     </div>
-                    <div class="input-text">
+                    <div class="input-line">
                         <label for="update-sidepanel-hero" id="lbl-update-sidepanel-hero">Hero Image url</label>
-                        <input class="input-txt" id="update-sidepanel-hero" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
+                        <input id="update-sidepanel-hero" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
                     </div>
-                    <div class="input-text">
+                    <div class="input-line">
                         <label for="update-card-text">Card Text Color</label>
-                        <input class="input-txt" id="update-card-text" type="text" placeholder="#ffffff"/>
+                        <input  id="update-card-text" type="text" placeholder="#ffffff"/>
                     </div>
-                    <div class="input-text">
-                        <label for="update-cardbg-solid">Solid Background Color</label>
-                        <input class="input-txt" id="update-cardbg-solid" type="text" placeholder="card background solid"/>
+                    <div class="input-line">
+                        <label for="update-cardbg-solid">Card Color</label>
+                        <input  id="update-cardbg-solid" type="text" placeholder="card background solid"/>
                     </div>
-                    <div class="input-text">
+                    <div class="input-line">
                         <label for="update-cardbg-gradient-1">Gradient Start</label>
-                        <input class="input-txt" id="update-cardbg-gradient-1" type="text" placeholder="#0b0b0b"/>
+                        <input  id="update-cardbg-gradient-1" type="text" placeholder="#0b0b0b"/>
                     </div>
-                    <div class="input-text">
+                    <div class="input-line">
                         <label for="update-cardbg-gradient-2">Gradient End</label>
-                        <input class="input-txt" id="update-cardbg-gradient-2" type="text" placeholder="#1b1b1b"/>
+                        <input  id="update-cardbg-gradient-2" type="text" placeholder="#1b1b1b"/>
                     </div>
                 </div>
             </div>
@@ -439,11 +480,26 @@
                 sidePanelBg.style.display = "none";
             }
 
-            var sidePanelImg = document.getElementById("update-sidepanel-img");
-            if (sidePanelImg.style.display === "none") {
-                sidePanelImg.style.display = "inline-block";
+            var lblSidePanelBg = document.getElementById("lbl-sidepanel-bg");
+            if (lblSidePanelBg.style.display === "none") {
+                lblSidePanelBg.style.display = "inline-block";
             } else {
+                lblSidePanelBg.style.display = "none";
+            }
+
+
+            var sidePanelImg = document.getElementById("update-sidepanel-img");
+            if (sidePanelImg.style.display === "inline-block") {
                 sidePanelImg.style.display = "none";
+            } else {
+                sidePanelImg.style.display = "inline-block";
+            }
+
+            var lblSidePanelImg = document.getElementById("lbl-sidepanel-img");
+            if (lblSidePanelImg.style.display === "inline-block") {
+                lblSidePanelImg.style.display = "none";
+            } else {
+                lblSidePanelImg.style.display = "inline-block";
             }
         };
 
