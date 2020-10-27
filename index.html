@@ -185,13 +185,13 @@
             height: 40px;
             width: 100%;
             line-height: 40px;
-            margin-top: 100px;
+            margin-top: 50px;
             text-align: center;
         }
 
         #update-content{
             /*background-color: #007BFF;*/
-            background-color: rgb(64,176,236);
+            background-color: #3b3b3b;
             border-radius:3px;
             cursor:pointer;
             color:#ffffff;
@@ -205,27 +205,11 @@
         }
 
         #update-content:hover{
-            background-color: #007BFF;
+            background-color:  rgb(64,176,236);
             /*background-color: #0069D9;*/
             -webkit-transition: background-color 0.5s;
             transition: background-color 0.5s;
         }   
-
-        .input-txt{
-            -webkit-border-radius: 2x; 
-            -moz-border-radius: 2px; 
-            border-radius: 2px; 
-            border: 1px solid #eeeeee; 
-            outline:0; 
-            height: 30px;
-            width: 100%;
-            margin-top: 10px;
-            padding-left: 8px;
-        }
-
-        .input-txt:focus{
-            border: 1px solid rgb(64,176,236); 
-        }
 
         .footer-bar{
             height: 50px;
@@ -255,17 +239,18 @@
             line-height: 30px;
             font-size: 17px;
             color: #aaaaaa;
-            margin-bottom: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
             font-weight: lighter;
             padding-left: 20px;
         }
 
         #update-sidepanel-bg {display: inline-block;}
         #lbl-sidepanel-bg {display: inline-block;}
-        #update-sidepanel-img {display: none;}
-        #lbl-sidepanel-img {display: none;}
+        #update-sidepanel-img {display: none; border: 0;}
+        #lbl-sidepanel-img {display: none; border: 0;}
 
-        label {
+        .input-line label {
             height: 30px;
             line-height: 30px;
             font-size: 16px;
@@ -274,7 +259,7 @@
             margin-right: 0px;
             text-align: center;
         }
-        input {
+        .input-line input {
             display: inline-block;
             outline:0; 
             border: 0;
@@ -287,23 +272,49 @@
         }
         .input-line{
             width: 507px;
-            background-color: #cccccc;
+            background-color: #3b3b3b;
+            border-radius: 5px;
+            border: 1px solid #eeeeee; 
+            border-color: #eeeeee;
+            color: #ffffff;
+            margin-right: auto;
+            margin-bottom: 14px;
+            margin-left: auto;
+            -webkit-transition: background-color 1.5s;
+            transition: background-color 1.5s;
+            -webkit-transition: border-color 1.5s;
+            transition: border-color 1.5s;
+        }
+        .input-line:focus-within{
+            -webkit-transition: background-color 1.5s;
+            transition: background-color 1.5s;
+            -webkit-transition: border-color 1.5s;
+            transition: border-color 1.5s;
+            background-color: rgb(64,176,236);
+            border-color: rgb(64,176,236);
+        }
+        .control-line{
+            height: 40px;
+            width: 300px;
+            background: hotpink;
             border-radius: 5px;
             border: 1px solid #eeeeee; 
             color: #fff;
-            -webkit-transition: background-color 1s;
-            transition: background-color 1s;
-
-            -webkit-transition: border 1s;
-            transition: border 1s;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .input-line:focus-within{
-            -webkit-transition: background-color 1s;
-            transition: background-color 1s;
-            -webkit-transition: border 1s;
-            transition: border 1s;
-            background-color: rgb(64,176,236);
-            border: 1px solid rgb(64,176,236);
+        .control-line input{
+            display: inline-block;
+            margin-left:20px;
+            margin-right: 20px;
+        }
+        .control-line label{
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            display: inline-block;
+            width: 150px;
+            text-align: center;
         }
     </style>
 </head>
@@ -313,18 +324,18 @@
         <div class="box-cont">
             <div class="side-panel">
                 <div class="side-panel-image">
-
+                    <!--SidePanel Empty Div-->
                 </div>
             </div>
             <div class="box">
                 <div class="box-text" id="title">
-                    GetDirectory
+                    RepoCardGen
                 </div>
                 <div class="box-author" id="author">
                     by dark-coffee
                 </div>
                 <div class="box-desc" id="desc">
-                    a module to extend the functionality of <span style="color: rgb(252, 252, 59);">dir</span>
+                    generate <span style="font-style:italic;">fancy</span> cards
                 </div>
             </div>
         </div>
@@ -336,25 +347,28 @@
                 <div class="controls-inner">
                     <div class="card-title">Edit Controls</div>
                     <div class="card-subtitle">Panel Settings</div>
-                    <br/>
-                    <input id="check-hero-image" type="checkbox" checked onclick="doFunction();">
-                    <label for="check-hero-image"> Hero Image</label>
-                    <br/>
-                    <br/>
+                    <div class="control-line">
+                        <input id="check-hero-image" type="checkbox" checked onclick="doFunction();">
+                        <label for="check-hero-image"> Hero Image</label>
+                    </div>
                     <div class="card-subtitle">Background Style</div>
-                    <input id="radio-panel-bg-1" type="radio" name="panel-bg" value="1"checked onClick="RadioCheck1();">
-                    <label for="radio-panel-bg-1">Solid</label>
-                    <br/>
-                    <input id="radio-panel-bg-2" type="radio" name="panel-bg" value="2" onClick="RadioCheck1();">
-                    <label for="radio-panel-bg-2">Image</label>
-                    <br/>
-                    <br/>
+                    <div class="control-line">
+                        <input id="radio-panel-bg-1" type="radio" name="panel-bg" value="1"checked onClick="RadioCheck1();">
+                        <label for="radio-panel-bg-1">Solid</label>
+                    </div>
+                    <div class="control-line">
+                        <input id="radio-panel-bg-2" type="radio" name="panel-bg" value="2" onClick="RadioCheck1();">
+                        <label for="radio-panel-bg-2">Image</label>
+                    </div>
                     <div class="card-subtitle">Card Background</div>
-                    <input id="r3" type="radio" name="card-bg" value="1"checked>
-                    <label for="r3">Solid</label>
-                    <br/>
-                    <input id="r4" type="radio" name="card-bg" value="2">
-                    <label for="r4">Gradient</label>
+                    <div class="control-line">
+                        <input id="r3" type="radio" name="card-bg" value="1"checked>
+                        <label for="r3">Solid</label>
+                    </div>
+                    <div class="control-line">
+                        <input id="r4" type="radio" name="card-bg" value="2">
+                        <label for="r4">Gradient</label>
+                    </div>
                     <div class="input-button">
                         <a href="#" id="update-content" onclick="doFunction();">update card</a>
                     </div>
