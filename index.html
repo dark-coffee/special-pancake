@@ -5,6 +5,7 @@
     <style>
         html{
             scroll-behavior: smooth;
+            user-select: none;
         }
 
         .all-cont{
@@ -284,7 +285,7 @@
             border-color: #eeeeee;
             color: #ffffff;
             margin-right: auto;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
             margin-left: auto;
             -webkit-transition: background-color 1.5s;
             transition: background-color 1.5s;
@@ -308,6 +309,7 @@
             color: #fff;
             margin-left: auto;
             margin-right: auto;
+            cursor: pointer;
         }
         .control-line input{
             display: inline-block;
@@ -352,12 +354,12 @@
             <div class="controls-box">
                 <div class="controls-inner">
                     <div class="card-title">Edit Controls</div>
-                    <div class="card-subtitle">Panel Settings</div>
+                    <div class="card-subtitle">Side Panel Settings</div>
                     <div class="control-line">
                         <input id="check-hero-image" type="checkbox" checked onclick="doFunction();">
-                        <label for="check-hero-image"> Hero Image</label>
+                        <label for="check-hero-image">Hero Image</label>
                     </div>
-                    <div class="card-subtitle">Background Style</div>
+                    <div class="card-subtitle">Side Panel Background Style</div>
                     <div class="control-line">
                         <input id="radio-panel-bg-1" type="radio" name="panel-bg" value="1" checked onClick="RadioCheck1();">
                         <label for="radio-panel-bg-1">Solid</label>
@@ -383,6 +385,7 @@
             <div class="input-container">
                 <div class="input-inner">
                     <div class="card-title">Card Details</div>
+                    <div class="card-subtitle">Card Information</div>
                     <div class="input-line">
                         <label for="update-title">Repo Title</label>
                         <input id="update-title" type="text" placeholder="repocardgen"/>
@@ -395,6 +398,7 @@
                         <label for="update-description">Repo Description</label>
                         <input id="update-description" type="text" placeholder="desc goes here"/>
                     </div>
+                    <div class="card-subtitle">Side Panel Customisation</div>
                     <div class="input-line">
                         <label for="update-sidepanel-bg" id="lbl-sidepanel-bg">Panel Color</label>
                         <input id="update-sidepanel-bg" type="text" placeholder="#333333"/>
@@ -411,6 +415,7 @@
                         <label for="update-card-text">Card Text Color</label>
                         <input  id="update-card-text" type="text" placeholder="#ffffff"/>
                     </div>
+                    <div class="card-subtitle">Card Background</div>
                     <div class="input-line">
                         <label for="update-cardbg-solid" id="lbl-cardbg-solid">Card Color</label>
                         <input id="update-cardbg-solid" type="text" placeholder="card background solid"/>
