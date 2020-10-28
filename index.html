@@ -150,9 +150,9 @@
         }
 
         .controls-inner{
-            height: 530px;
+            height: 600px;
             width: 70%;
-            margin-top: 50px;
+            margin-top: 0px;
             margin-right: 50px;
             margin-left: auto;
             background-color: #ffffff;
@@ -169,9 +169,9 @@
         }
 
         .input-inner{
-            height: 530px;
+            height: 600px;
             width: 85%;
-            margin-top: 50px;
+            margin-top: 0px;
             background-color: #ffffff;
             border-radius: 5px;
 
@@ -249,6 +249,12 @@
         #lbl-sidepanel-bg {display: inline-block;}
         #update-sidepanel-img {display: none; border: 0;}
         #lbl-sidepanel-img {display: none; border: 0;}
+        #update-cardbg-solid {display: inline-block;}
+        #lbl-cardbg-solid {display: inline-block;}
+        #update-cardbg-gradient-1 {display: none; border: 0;}
+        #lbl-cardbg-grad-1 {display: none; border: 0;}
+        #update-cardbg-gradient-2 {display: none; border: 0;}
+        #lbl-cardbg-grad-2 {display: none; border: 0;}
 
         .input-line label {
             height: 30px;
@@ -266,13 +272,13 @@
             height: 31px;
             width: 343.55px;
             margin-left:0px;
-            font-size: 16px;
+            font-size: 15px;
             border-radius: 0px 4px 4px 0px;
             padding-left: 8px;
         }
         .input-line{
             width: 507px;
-            background-color: #3b3b3b;
+            background-color: rgba(59,59,59,1);
             border-radius: 5px;
             border: 1px solid #eeeeee; 
             border-color: #eeeeee;
@@ -296,7 +302,7 @@
         .control-line{
             height: 40px;
             width: 300px;
-            background: hotpink;
+            background: rgb(59,59,59);
             border-radius: 5px;
             border: 1px solid #eeeeee; 
             color: #fff;
@@ -314,7 +320,7 @@
             font-size: 16px;
             display: inline-block;
             width: 150px;
-            text-align: center;
+            text-align: left;
         }
     </style>
 </head>
@@ -353,7 +359,7 @@
                     </div>
                     <div class="card-subtitle">Background Style</div>
                     <div class="control-line">
-                        <input id="radio-panel-bg-1" type="radio" name="panel-bg" value="1"checked onClick="RadioCheck1();">
+                        <input id="radio-panel-bg-1" type="radio" name="panel-bg" value="1" checked onClick="RadioCheck1();">
                         <label for="radio-panel-bg-1">Solid</label>
                     </div>
                     <div class="control-line">
@@ -362,11 +368,11 @@
                     </div>
                     <div class="card-subtitle">Card Background</div>
                     <div class="control-line">
-                        <input id="r3" type="radio" name="card-bg" value="1"checked>
+                        <input id="r3" type="radio" name="card-bg" value="1"checked onClick="RadioCheck2();">
                         <label for="r3">Solid</label>
                     </div>
                     <div class="control-line">
-                        <input id="r4" type="radio" name="card-bg" value="2">
+                        <input id="r4" type="radio" name="card-bg" value="2" onClick="RadioCheck2();">
                         <label for="r4">Gradient</label>
                     </div>
                     <div class="input-button">
@@ -379,22 +385,22 @@
                     <div class="card-title">Card Details</div>
                     <div class="input-line">
                         <label for="update-title">Repo Title</label>
-                        <input id="update-title" type="text" placeholder="module title"/>
+                        <input id="update-title" type="text" placeholder="repocardgen"/>
                     </div>
                     <div class="input-line">
                         <label for="update-author">Repo Author</label>
-                        <input id="update-author" type="text" placeholder="module author"/>
+                        <input id="update-author" type="text" placeholder="dark-coffee"/>
                     </div>
                     <div class="input-line">
                         <label for="update-description">Repo Description</label>
-                        <input id="update-description" type="text" placeholder="module description"/>
+                        <input id="update-description" type="text" placeholder="desc goes here"/>
                     </div>
                     <div class="input-line">
                         <label for="update-sidepanel-bg" id="lbl-sidepanel-bg">Panel Color</label>
-                        <input id="update-sidepanel-bg" type="text" placeholder="side panel color"/>
+                        <input id="update-sidepanel-bg" type="text" placeholder="#333333"/>
                     </div>
                     <div class="input-line">
-                        <label for="update-sidepanel-img" id="lbl-sidepanel-img">Image url</label>
+                        <label for="update-sidepanel-img" id="lbl-sidepanel-img">Panel Image Url</label>
                         <input id="update-sidepanel-img" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
                     </div>
                     <div class="input-line">
@@ -406,16 +412,16 @@
                         <input  id="update-card-text" type="text" placeholder="#ffffff"/>
                     </div>
                     <div class="input-line">
-                        <label for="update-cardbg-solid">Card Color</label>
-                        <input  id="update-cardbg-solid" type="text" placeholder="card background solid"/>
+                        <label for="update-cardbg-solid" id="lbl-cardbg-solid">Card Color</label>
+                        <input id="update-cardbg-solid" type="text" placeholder="card background solid"/>
                     </div>
                     <div class="input-line">
-                        <label for="update-cardbg-gradient-1">Gradient Start</label>
-                        <input  id="update-cardbg-gradient-1" type="text" placeholder="#0b0b0b"/>
+                        <label for="update-cardbg-gradient-1" id="lbl-cardbg-grad-1">Gradient Start</label>
+                        <input id="update-cardbg-gradient-1" type="text" placeholder="#0b0b0b"/>
                     </div>
                     <div class="input-line">
-                        <label for="update-cardbg-gradient-2">Gradient End</label>
-                        <input  id="update-cardbg-gradient-2" type="text" placeholder="#1b1b1b"/>
+                        <label for="update-cardbg-gradient-2" id="lbl-cardbg-grad-2">Gradient End</label>
+                        <input id="update-cardbg-gradient-2" type="text" placeholder="#1b1b1b"/>
                     </div>
                 </div>
             </div>
@@ -528,6 +534,40 @@
             }
         };
 
+
+        //-----------------------------------------------//
+
+
+        //Show-Hide Gradient Boxes
+        function RadioCheck2 () {
+            //Variables
+            var cardSolid = document.getElementById("update-cardbg-solid");
+            var lblCardSolid = document.getElementById("lbl-cardbg-solid");
+            var cardGrad1 = document.getElementById("update-cardbg-gradient-1");
+            var cardGrad2 = document.getElementById("update-cardbg-gradient-2");
+            var lblCardGrad1 = document.getElementById("lbl-cardbg-grad-1");
+            var lblCardGrad2 = document.getElementById("lbl-cardbg-grad-2");
+
+            if (cardGrad1.style.display === "inline-block") {
+                cardGrad1.style.display = "none";
+                cardGrad2.style.display = "none";
+                lblCardGrad1.style.display = "none";
+                lblCardGrad2.style.display = "none";
+            } else {
+                cardGrad1.style.display = "inline-block";
+                cardGrad2.style.display = "inline-block";
+                lblCardGrad1.style.display = "inline-block";
+                lblCardGrad2.style.display = "inline-block";
+            }
+            
+            if (cardSolid.style.display === "none") {
+                cardSolid.style.display = "inline-block";
+                lblCardSolid.style.display = "inline-block";
+            } else {
+                cardSolid.style.display = "none";
+                lblCardSolid.style.display = "none";
+            }
+        };
 
     </script>
 </body>
