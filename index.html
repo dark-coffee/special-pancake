@@ -433,9 +433,20 @@
             var cardAuthor = document.getElementById("update-author").value;
             var cardDescription = document.getElementById("update-description").value;
 
+            //Check Entered Content
+            if (cardTitle === ""){
+                cardTitle = "hmmm... I'm empty";
+            }
+
+            if (cardAuthor === ""){
+                cardAuthor = "nuthin' to see here";
+            }else{
+                cardAuthor = "by " + cardAuthor;
+            }
+
             //Update Content
             document.getElementById("title").innerHTML = cardTitle;
-            document.getElementById("author").innerHTML = "by " + cardAuthor;
+            document.getElementById("author").innerHTML = cardAuthor;
             document.getElementById("desc").innerHTML = cardDescription;
 
             //Scroll to Top
