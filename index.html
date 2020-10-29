@@ -251,11 +251,13 @@
         #update-sidepanel-img {display: none; border: 0;}
         #lbl-sidepanel-img {display: none; border: 0;}
         #update-cardbg-solid {display: inline-block;}
+        /*
         #lbl-cardbg-solid {display: inline-block;}
         #update-cardbg-gradient-1 {display: none; border: 0;}
         #lbl-cardbg-grad-1 {display: none; border: 0;}
         #update-cardbg-gradient-2 {display: none; border: 0;}
         #lbl-cardbg-grad-2 {display: none; border: 0;}
+        */
 
         .input-line label {
             height: 30px;
@@ -265,40 +267,48 @@
             width: 150px;
             margin-right: 0px;
             text-align: center;
+            font-weight: 200;
         }
         .input-line input {
             display: inline-block;
             outline:0; 
             border: 0;
             height: 31px;
-            width: 343.55px;
+            width: 342.55px;
             margin-left:0px;
             font-size: 15px;
             border-radius: 0px 4px 4px 0px;
             padding-left: 8px;
+            border-left: 1px solid #eeeeee;
+            font-weight: 300;
         }
         .input-line{
             width: 507px;
-            background-color: rgba(59,59,59,1);
+            /*background-color: rgba(59,59,59,1);*/
+            background-color: #ffffff;
             border-radius: 5px;
             border: 1px solid #eeeeee; 
             border-color: #eeeeee;
-            color: #ffffff;
-            margin-right: auto;
+            color: #3b3b3b;
             margin-bottom: 10px;
-            margin-left: auto;
+            margin-left: 7%;
             -webkit-transition: background-color 1.5s;
             transition: background-color 1.5s;
             -webkit-transition: border-color 1.5s;
             transition: border-color 1.5s;
+            -webkit-transition: color 0.5s;
+            transition: color 0.5s;
         }
         .input-line:focus-within{
             -webkit-transition: background-color 1.5s;
             transition: background-color 1.5s;
             -webkit-transition: border-color 1.5s;
             transition: border-color 1.5s;
+            -webkit-transition: color 0.5s;
+            transition: color 0.5s;
             background-color: rgb(64,176,236);
             border-color: rgb(64,176,236);
+            color: #ffffff;
         }
         .control-line{
             height: 40px;
@@ -323,6 +333,12 @@
             display: inline-block;
             width: 150px;
             text-align: left;
+            font-weight: 300;
+        }
+
+        .input-inner .card-subtitle {
+            margin-left: 4%;
+            font-weight: 200;
         }
     </style>
 </head>
@@ -401,32 +417,32 @@
                     <div class="card-subtitle">Side Panel Customisation</div>
                     <div class="input-line">
                         <label for="update-sidepanel-bg" id="lbl-sidepanel-bg">Panel Color</label>
-                        <input id="update-sidepanel-bg" type="text" placeholder="#333333"/>
+                        <input id="update-sidepanel-bg" type="text" placeholder="#333333" maxlength="25"/>
                     </div>
                     <div class="input-line">
-                        <label for="update-sidepanel-img" id="lbl-sidepanel-img">Panel Image Url</label>
-                        <input id="update-sidepanel-img" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
+                        <label for="update-sidepanel-img" id="lbl-sidepanel-img">Panel Image URL</label>
+                        <input id="update-sidepanel-img" type="text" placeholder="https://images.unsplash.com/"/>
                     </div>
                     <div class="input-line">
-                        <label for="update-sidepanel-hero" id="lbl-update-sidepanel-hero">Hero Image url</label>
-                        <input id="update-sidepanel-hero" type="text" placeholder="https://images.unsplash.com/photo-1543988884-c01cfa7b41c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1958&q=80"/>
+                        <label for="update-sidepanel-hero" id="lbl-update-sidepanel-hero">Hero Image URL</label>
+                        <input id="update-sidepanel-hero" type="text" placeholder="https://images.unsplash.com/"/>
                     </div>
                     <div class="input-line">
                         <label for="update-card-text">Card Text Color</label>
-                        <input  id="update-card-text" type="text" placeholder="#ffffff"/>
+                        <input  id="update-card-text" type="text" placeholder="#ffffff" maxlength="25"/>
                     </div>
                     <div class="card-subtitle">Card Background</div>
                     <div class="input-line">
                         <label for="update-cardbg-solid" id="lbl-cardbg-solid">Card Color</label>
-                        <input id="update-cardbg-solid" type="text" placeholder="card background solid"/>
+                        <input id="update-cardbg-solid" type="text" placeholder="#007BFF" maxlength="25"/>
                     </div>
                     <div class="input-line">
                         <label for="update-cardbg-gradient-1" id="lbl-cardbg-grad-1">Gradient Start</label>
-                        <input id="update-cardbg-gradient-1" type="text" placeholder="#0b0b0b"/>
+                        <input id="update-cardbg-gradient-1" type="text" placeholder="#0b0b0b" maxlength="25"/>
                     </div>
                     <div class="input-line">
                         <label for="update-cardbg-gradient-2" id="lbl-cardbg-grad-2">Gradient End</label>
-                        <input id="update-cardbg-gradient-2" type="text" placeholder="#1b1b1b"/>
+                        <input id="update-cardbg-gradient-2" type="text" placeholder="#1b1b1b" maxlength="25"/>
                     </div>
                 </div>
             </div>
@@ -548,32 +564,36 @@
         function RadioCheck2 () {
             //Variables
             var cardSolid = document.getElementById("update-cardbg-solid");
-            var lblCardSolid = document.getElementById("lbl-cardbg-solid");
             var cardGrad1 = document.getElementById("update-cardbg-gradient-1");
             var cardGrad2 = document.getElementById("update-cardbg-gradient-2");
-            var lblCardGrad1 = document.getElementById("lbl-cardbg-grad-1");
-            var lblCardGrad2 = document.getElementById("lbl-cardbg-grad-2");
 
             if (cardGrad1.style.display === "inline-block") {
                 cardGrad1.style.display = "none";
                 cardGrad2.style.display = "none";
-                lblCardGrad1.style.display = "none";
-                lblCardGrad2.style.display = "none";
+                cardGrad1.parentNode.style.display = "none";
+                cardGrad2.parentNode.style.display = "none";
             } else {
                 cardGrad1.style.display = "inline-block";
                 cardGrad2.style.display = "inline-block";
-                lblCardGrad1.style.display = "inline-block";
-                lblCardGrad2.style.display = "inline-block";
+                cardGrad1.parentElement.style.display = "inline-block";
+                cardGrad2.parentElement.style.display = "inline-block";
             }
             
             if (cardSolid.style.display === "none") {
                 cardSolid.style.display = "inline-block";
-                lblCardSolid.style.display = "inline-block";
+                cardSolid.parentElement.style.display = "inline-block";
             } else {
                 cardSolid.style.display = "none";
-                lblCardSolid.style.display = "none";
+                cardSolid.parentNode.style.display = "none";
             }
         };
+
+
+        //-----------------------------------------------//
+
+
+        //Hide Inital Elements
+        
 
 
         //-----------------------------------------------//
@@ -590,6 +610,13 @@
             //Write Size to Screen
             debugWindowDisplay.innerHTML = "debug: " + debugWindowWidth + "x" + debugWindowHeight;
 
+
+            //HIJACK - UNDO THIS LATER
+            //Hide Inital Elements
+            var cardGrad1 = document.getElementById("update-cardbg-gradient-1");
+            var cardGrad2 = document.getElementById("update-cardbg-gradient-2");
+            cardGrad1.parentNode.style.display = "none";
+            cardGrad2.parentNode.style.display = "none";
         };
     </script>
 </body>
