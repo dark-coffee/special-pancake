@@ -20,7 +20,7 @@
             font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
         }
 
-        .title{
+        .title, .title a{
             height:30px;
             line-height: 30px;
             color: #aaaaaa;
@@ -32,7 +32,7 @@
             transition: color 2s;
         }
 
-        .title:hover{
+        .title a:hover{
             color: rgb(64,176,236);
             -webkit-transition: color 1.5s;
             transition: color 1.5s;
@@ -326,9 +326,9 @@
         }
     </style>
 </head>
-<body>
+<body onresize="debugWindowSize();" onload="debugWindowSize();">
     <div class="all-cont">
-        <div class="title">dark-coffee | github repo card designer</div>
+        <div class="title"><a style="text-decoration:none;" href="https://dark-coffee.github.io">dark-coffee | github repo card designer</a></div>
         <div class="box-cont">
             <div class="side-panel">
                 <div class="side-panel-image">
@@ -348,7 +348,7 @@
             </div>
         </div>
         <div class="bottom-bar" onclick="scrollToBottom()">
-            &#129175; edit
+            <!--&#129175;-->edit
         </div>
         <div class="edit-area" id="edit-area">
             <div class="controls-box">
@@ -432,6 +432,7 @@
             </div>
         </div>
         <div class="footer-bar" id="footer-bar">
+            <span id="debug-window-size" style="padding-right: 770px;">debug: 0000x0000</span>
             <span style="padding-right: 20px;">util by dark-coffee  |  powered by github pages</span>
         </div>
     </div>
@@ -507,7 +508,7 @@
         //-----------------------------------------------//
 
 
-        //Show-Hide Hero Image
+        //Show-Hide Side Panel Background Controls
         function RadioCheck1 () { 
             var sidePanelBg = document.getElementById("update-sidepanel-bg");
             if (sidePanelBg.style.display === "none") {
@@ -574,6 +575,22 @@
             }
         };
 
+
+        //-----------------------------------------------//
+
+
+        //Debug: Window Size
+        function debugWindowSize () {
+
+            //Define Variables
+            var debugWindowWidth = window.innerWidth;
+            var debugWindowHeight = window.innerHeight;
+            var debugWindowDisplay = document.getElementById("debug-window-size");
+
+            //Write Size to Screen
+            debugWindowDisplay.innerHTML = "debug: " + debugWindowWidth + "x" + debugWindowHeight;
+
+        };
     </script>
 </body>
 </html>
