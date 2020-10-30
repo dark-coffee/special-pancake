@@ -151,7 +151,7 @@
         }
 
         .controls-inner{
-            height: 600px;
+            height: 625px;
             width: 70%;
             margin-top: 0px;
             margin-right: 50px;
@@ -170,7 +170,7 @@
         }
 
         .input-inner{
-            height: 600px;
+            height: 625px;
             width: 85%;
             margin-top: 0px;
             background-color: #ffffff;
@@ -248,8 +248,8 @@
 
         #update-sidepanel-bg {display: inline-block;}
         #lbl-sidepanel-bg {display: inline-block;}
-        #update-sidepanel-img {display: none; border: 0;}
-        #lbl-sidepanel-img {display: none; border: 0;}
+        /*#update-sidepanel-img {display: none; border: 0;}*/
+        /*#lbl-sidepanel-img {display: none; border: 0;}*/
         #update-cardbg-solid {display: inline-block;}
         /*
         #lbl-cardbg-solid {display: inline-block;}
@@ -331,7 +331,7 @@
             line-height: 40px;
             font-size: 16px;
             display: inline-block;
-            width: 150px;
+            width: 243px;
             text-align: left;
             font-weight: 300;
         }
@@ -427,9 +427,10 @@
                         <label for="update-sidepanel-hero" id="lbl-update-sidepanel-hero">Hero Image URL</label>
                         <input id="update-sidepanel-hero" type="text" placeholder="https://images.unsplash.com/"/>
                     </div>
+                    <div class="card-subtitle">Card Text</div>
                     <div class="input-line">
                         <label for="update-card-text">Card Text Color</label>
-                        <input  id="update-card-text" type="text" placeholder="#ffffff" maxlength="25"/>
+                        <input  id="update-card-text" type="text" placeholder="#FFFFFF" maxlength="25"/>
                     </div>
                     <div class="card-subtitle">Card Background</div>
                     <div class="input-line">
@@ -481,44 +482,29 @@
             scrollToTop();
         };
 
+
+        //-----------------------------------------------//
+
+
         
         //Show-Hide Hero Image
         document.getElementById("check-hero-image").onclick = function () { 
             var heroImageInput = document.getElementById("update-sidepanel-hero");
             if (heroImageInput.style.display === "none") {
                 heroImageInput.style.display = "inline-block";
+                heroImageInput.parentElement.style.display = "inline-block";
             } else {
                 heroImageInput.style.display = "none";
+                heroImageInput.parentElement.style.display = "none";
             }
 
-            var heroImageLabel = document.getElementById("lbl-update-sidepanel-hero");
+            /*var heroImageLabel = document.getElementById("lbl-update-sidepanel-hero");
             if (heroImageLabel.style.display === "none") {
                 heroImageLabel.style.display = "inline-block";
             } else {
                 heroImageLabel.style.display = "none";
-            }
+            }*/
         };
-
-
-        //-----------------------------------------------//
-
-
-        //Scroll to Bottom
-        document.getElementById("bottom-bar").onclick = function () { 
-            scrollToBottom();
-        };
-
-        function scrollToBottom() {
-            var elmnt = document.getElementById("footer-bar");
-            elmnt.scrollIntoView(false);
-        }
-
-
-        //Scroll to Top
-        function scrollToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
 
 
         //-----------------------------------------------//
@@ -529,31 +515,35 @@
             var sidePanelBg = document.getElementById("update-sidepanel-bg");
             if (sidePanelBg.style.display === "none") {
                 sidePanelBg.style.display = "inline-block";
+                sidePanelBg.parentElement.style.display = "inline-block";
             } else {
                 sidePanelBg.style.display = "none";
+                sidePanelBg.parentElement.style.display = "none";
             }
 
-            var lblSidePanelBg = document.getElementById("lbl-sidepanel-bg");
+            /*var lblSidePanelBg = document.getElementById("lbl-sidepanel-bg");
             if (lblSidePanelBg.style.display === "none") {
                 lblSidePanelBg.style.display = "inline-block";
             } else {
                 lblSidePanelBg.style.display = "none";
-            }
+            }*/
 
 
             var sidePanelImg = document.getElementById("update-sidepanel-img");
             if (sidePanelImg.style.display === "inline-block") {
                 sidePanelImg.style.display = "none";
+                sidePanelImg.parentElement.style.display = "none";
             } else {
                 sidePanelImg.style.display = "inline-block";
+                sidePanelImg.parentElement.style.display = "inline-block";
             }
 
-            var lblSidePanelImg = document.getElementById("lbl-sidepanel-img");
+            /*var lblSidePanelImg = document.getElementById("lbl-sidepanel-img");
             if (lblSidePanelImg.style.display === "inline-block") {
                 lblSidePanelImg.style.display = "none";
             } else {
                 lblSidePanelImg.style.display = "inline-block";
-            }
+            }*/
         };
 
 
@@ -599,6 +589,28 @@
         //-----------------------------------------------//
 
 
+        //Scroll Down on 'edit'
+        document.getElementById("bottom-bar").onclick = function () { 
+            scrollToBottom();
+        };
+
+        //Scroll to Bottom
+        function scrollToBottom() {
+            var elmnt = document.getElementById("footer-bar");
+            elmnt.scrollIntoView(false);
+        };
+
+
+        //Scroll to Top
+        function scrollToTop() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+
+
+        //-----------------------------------------------//
+
+
         //Debug: Window Size
         function debugWindowSize () {
 
@@ -617,6 +629,8 @@
             var cardGrad2 = document.getElementById("update-cardbg-gradient-2");
             cardGrad1.parentNode.style.display = "none";
             cardGrad2.parentNode.style.display = "none";
+            sidePanelImg = document.getElementById("update-sidepanel-img");
+            sidePanelImg.parentNode.style.display = "none";
         };
     </script>
 </body>
